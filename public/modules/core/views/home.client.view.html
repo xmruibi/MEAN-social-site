@@ -1,0 +1,64 @@
+<section data-ng-controller="HomeController">
+	<div class="head_text col-md-12">
+                    <h1>
+                        Test Social Site for 糗百版 Twitter
+                    </h1>
+
+                    <h2 class="col-sm-10 col-sm-push-1">
+                        糗百版Twitter 继承了蔡总遗志。。。 在此基础上望各位同志 加以改进。。。 或者提出新的idea。。
+                    </h2>
+                </div>
+
+                <div id="forms_container" class="form_cont col-lg-4 col-sm-4 col-xs-12 pull-right">
+                    <form class="dark_form" data-ng-submit="signin()" method="POST" novalidate data-ng-controller="AuthenticationController">
+                        <legend class="clearfix">
+                            <div class="pull-left" >
+                                <span class="glyphicon glyphicon-lock"></span> Enter Twitter
+                            </div>
+                        </legend>
+
+							
+                        <fieldset class="register-form-fields">
+                            <div class="input">
+                                <input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username">
+                            </div>
+                            <div class="input" data-showpassword="">
+                               <input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <button id="submit" type="submit" class="fbtn blue">
+                          				SIGN IN
+                        </fieldset>
+                        <fieldset>
+                        <div class="forgot-password">
+					<a href="/#!/password/forgot">Forgot your password?</a>
+				</div>
+                        </fieldset>
+                        <div data-ng-show="error" class="text-center text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+                    </form>
+                    <form class="dark_form"  data-ng-controller="AuthenticationController">
+                        <legend class="clearfix">
+                            <div class="pull-left">
+                                <span class="glyphicon glyphicon-user"></span> Don't have an account?
+                            </div>
+                        </legend>
+                        <fieldset>
+                            <button  type="submit" class="fbtn blue" ui-route="/signup" ng-class="{active: $uiRoute}" >
+                                <span onclick="window.location.href='/#!/signup'" class="txt">SIGN UP</span>
+                            </button>
+                        </fieldset>
+                    </form>
+
+                </div>
+
+                <div id="video" class="col-sm-7">
+                    <div id="placeholder">
+                        <div id="play_btn" class="play_btn"></div>
+                    </div>
+                    <div id="video_placeholder_mobile"></div>
+                </div>
+</section>
